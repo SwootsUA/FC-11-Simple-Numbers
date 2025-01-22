@@ -1,18 +1,8 @@
-for (let i = 0; i < 100; i++) {
-    if (isPrime(i)) {
-        console.log('Number', i, 'is Simple');
-    }
-}
-
-function isPrime(number) {
-    if (number <= 1) {
-        return false;
-    }
-
-    for (let i = number - 1; i > 1; i--) {
-        if (number % i === 0) {
-            return false;
+isPrime: for (let number = 2; number < 100; number++) {
+    for (let divisor = number - 1; divisor > 1; divisor--) {
+        if (number % divisor === 0) {
+            continue isPrime;
         }
     }
-    return true;
+    console.log('Number', number, 'is Prime');
 }
